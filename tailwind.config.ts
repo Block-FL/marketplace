@@ -20,16 +20,8 @@ const config: Config = {
 				secondary: "var(--color-secondary)",
 				light: "var(--color-light)",
 			},
-			backgroundImage: {
-				heroImage: "url('/bg.png')",
-			},
-			keyframes: {
-				animategradient: {
-					"0%, 50%": { backgroundPosition: "0%, 50%" },
-					"50%, 100%": { backgroundPosition: "100%, 50%" },
-					"100%, 50%": { backgroundPositionposition: "0%, 50%" },
-				},
-			},
+			
+			
 		},
 	},
 	plugins: [],
