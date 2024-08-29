@@ -1,10 +1,10 @@
 "use client";
 import React, { useRef, useState, useEffect } from 'react';
-import Modal from './Modal';
+import Modal from './DashBoard/Modal';
 import Files from "@/components/Files";
 
 
-const User: React.FC = () => {
+const User: React.FC = (props: any) => {
     const [file, setFile] = useState<File | null>(null);
 	const [cid, setCid] = useState("");
 	const [uploading, setUploading] = useState(false);
@@ -72,6 +72,11 @@ const User: React.FC = () => {
         }
 	};
 
+    const GATEWAY_URL = process.env.NEXT_PUBLIC_GATEWAY_URL
+	? `https://${process.env.NEXT_PUBLIC_GATEWAY_URL}`
+	: "https://gateway.pinata.cloud";
+
+
     return (
         <div>
             <div className="flex flex-col justify-center items-start mt-20 w-1/2 space-y-6 ml-30">
@@ -79,7 +84,7 @@ const User: React.FC = () => {
                     <button
                         disabled={uploading}
                         onClick={() => inputFile.current?.click()}
-                        className="w-[150px] bg-secondary text-light rounded-3xl py-2 px-4 hover:bg-accent hover:text-light transition-all duration-300 ease-in-out"
+                        className="w-[150px] bg-secondary text-light dark:bg-purple-500 rounded-3xl py-2 px-4 hover:bg-purple-800 hover:text-light transition-all duration-300 ease-in-out"
                     >
                         {uploading ? "Uploading..." : "Upload"}
                     </button>
@@ -102,7 +107,8 @@ const User: React.FC = () => {
                                     </div>
                                     <div className="text-right">
                                         <p className="text-gray-400">{file.time}</p>
-                                        <a href={file.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                        <p>{props.cid}</p>
+                                        <a href={`${GATEWAY_URL}/ipfs/${file.cid}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                             View File
                                         </a>
                                     </div>

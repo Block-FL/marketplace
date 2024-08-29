@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import React from 'react';
-import User from './User'; 
+import User from '../User'; 
 import Client from './Client'; 
 import Settings from './Settings'; 
 
@@ -33,7 +33,7 @@ const SideBar: React.FC = () => {
 
     return (
         <main className="flex">
-            <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-blue-600 dark:border-blue-600">
+            <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-purple-500">
                 <div className="px-3 py-3 lg:px-5 lg:pl-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-start rtl:justify-end">
@@ -62,7 +62,7 @@ const SideBar: React.FC = () => {
                             </button>
                             <a href="/" className="flex ms-2 md:me-24">
                                 <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" />
-                                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">BlockFl</span>
+                                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">BlockFL</span>
                             </a>
                         </div>
                         <div className="flex items-center">
@@ -76,15 +76,15 @@ const SideBar: React.FC = () => {
                 id="logo-sidebar"
                 className={`fixed top-0 left-0 z-40 w-56 h-screen pt-20 transition-transform ${
                     isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-                } bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
+                } bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-purple-500`}
                 aria-label="Sidebar"
             >
-                <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+                <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-purple-500">
                     <ul className="space-y-2 font-medium">
                         <li>
                             <button
-                                className={`flex items-center p-2 w-full text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group ${
-                                    isActiveTab('User') ? 'border-l-4 border-blue-500' : ''
+                                className={`flex items-center p-2 w-full text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-purple-800 group ${
+                                    isActiveTab('User') ? 'border-l-4 border-white' : ''
                                 }`}
                                 onClick={() => setActiveContent('User')}
                             >
@@ -93,8 +93,8 @@ const SideBar: React.FC = () => {
                         </li>
                         <li>
                             <button
-                                className={`flex items-center p-2 w-full text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group ${
-                                    isActiveTab('Client') ? 'border-l-4 border-blue-500' : ''
+                                className={`flex items-center p-2 w-full text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-purple-800 group ${
+                                    isActiveTab('Client') ? 'border-l-4 border-white' : ''
                                 }`}
                                 onClick={() => setActiveContent('Client')}
                             >
@@ -103,8 +103,8 @@ const SideBar: React.FC = () => {
                         </li>
                         <li>
                             <button
-                                className={`flex items-center p-2 w-full text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group ${
-                                    isActiveTab('Settings') ? 'border-l-4 border-blue-500' : ''
+                                className={`flex items-center p-2 w-full text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-purple-800 group ${
+                                    isActiveTab('Settings') ? 'border-l-4 border-white' : ''
                                 }`}
                                 onClick={() => setActiveContent('Settings')}
                             >
