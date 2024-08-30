@@ -6,6 +6,7 @@ import Files from "@/components/Files";
 
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import SideBar from "./DashBoard/SideBar";
+import Wallet from "@/components/Wallet";
 // import SideBar from "@/components/SideBar";
 
 export default function Home() {
@@ -59,7 +60,7 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/pinnie.png" />
 			</Head>
-			
+			<Wallet/>
                 <SideBar/>
                
 			{/* <main className="w-full min-h-screen m-auto flex flex-col justify-center items-center">
